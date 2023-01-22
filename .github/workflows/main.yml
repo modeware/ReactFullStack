@@ -13,7 +13,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
-      - name: Print
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=preview --token=lGMcAispNUwnJfDQ1YgURtqX
       - name: Build Project Artifacts
