@@ -1,10 +1,13 @@
 import ReactDOM from 'react-dom';
+import 'materialize-css/dist/css/materialize.min.css';
 import App from "./components/App";
 import { Provider } from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
 import reducers from './reducers'
+import reduxThunk from 'redux-thunk';
 
-const store = createStore(reducers, {}, applyMiddleware());
+
+const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 
 
 ReactDOM.render(
@@ -13,3 +16,5 @@ ReactDOM.render(
         </Provider>, 
         document.querySelector('#root')
     );
+
+    console.log('SK', process.env.REACT_APP_STRIPE_KEY, process.env.NODE_ENV)
