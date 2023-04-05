@@ -28,7 +28,7 @@ app.use(passport.session())
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes.js')(app);
 
-if(process.env.VERCEL_ENV === 'production'){
+if(process.env.VERCEL_ENV.trim() === 'production'){
     
     // Express will serve production assets like main.js or main.css
     app.use(express.static('client/build'))
