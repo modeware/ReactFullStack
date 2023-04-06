@@ -5,7 +5,7 @@
             "src": "server",
             "use": "@vercel/node",
             "config": {
-                "buildCommand": "npm run vercel-postbuild",
+                "buildCommand": "npm run vercel-postbuild && node index.js",
                 "outputDirectory": "client/build"
             }
         }
