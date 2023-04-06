@@ -2,17 +2,18 @@
     "version": 2,
     "builds": [
         {
-            "src": "index.js",
-            "use": "@vercel/node"
-        },
-        {
             "src": "server/client",
             "use": "@vercel/node",
             "config": {
                 "buildCommand": "npm install && npm run build",
-                "outputDirectory": "client/build"
+                "outputDirectory": "server/client/build"
             }
+        },
+        {
+            "src": "index.js",
+            "use": "@vercel/node"
         }
+
 
     ],
     "routes": [
