@@ -3,12 +3,14 @@
     "builds": [
         {
             "src": "server/package.json",
+            "use": "@vercel/node",
             "config":{
                 "buildCommand": "npm start"
             }
         },
         {
             "src": "server/package.json",
+            "use": "@vercel/node",
             "config": {
                 "buildCommand": "npm run vercel-postbuild",
                 "outputDirectory": "client/build"
