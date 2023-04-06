@@ -2,9 +2,19 @@
     "version": 2,
     "builds": [
         {
-            "src": "client/build/index.html",
-            "use": "@now/node"
+            "src": "server/package.json",
+            "config":{
+                "buildCommand": "npm start"
+            }
+        },
+        {
+            "src": "server/package.json",
+            "config": {
+                "buildCommand": "npm run vercel-postbuild",
+                "outputDirectory": "client/build"
+            }
         }
+
     ],
     "routes": [
         {
