@@ -2,15 +2,16 @@
     "version": 2,
     "builds": [
         {
-            "src": "server/package.json",
-            "use": "@vercel/node",
-            "buildCommand": "npm start"
+            "src": "index.js",
+            "use": "@vercel/node"
         },
         {
             "src": "server/package.json",
             "use": "@vercel/node",
-            "buildCommand": "npm run vercel-postbuild",
-            "outputDirectory": "client/build"
+            "config": {
+                "buildCommand": "npm run vercel-postbuild",
+                "outputDirectory": "client/build"
+            }
         }
 
     ],
